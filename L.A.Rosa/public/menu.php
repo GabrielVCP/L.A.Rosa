@@ -15,7 +15,7 @@
    <li class='active has-sub'><a href='#'><span>Imóvel</span></a>
       <ul>
          <li class='has-sub'><a href='pesquisarImovel.php'><span>Pesquisar</span></a></li>
-         <li class='has-sub'><a href='cadastrarImovel.php'><span>Cadastrar</span></a></li>
+         <li class='has-sub'><a href='formImovel.php'><span>Cadastrar</span></a></li>
 		   <li class='has-sub'><a href='#'><span>Alterar</span></a></li>
 		   <li class='has-sub'><a href='#'><span>Excluir</span></a></li>
       </ul>
@@ -23,13 +23,17 @@
    <li class='active has-sub'><a href='#'><span>Cliente</span></a>
       <ul>
          <li class='has-sub'><a href='pesquisarCliente.php'><span>Pesquisar</span></a></li>
-         <li class='has-sub'><a href='cadastrarCliente.php'><span>Cadastrar</span></a></li>
+         <li class='has-sub'><a href='formCliente.php'><span>Cadastrar</span></a></li>
 		   <li class='has-sub'><a href='#'><span>Alterar</span></a></li>
 		   <li class='has-sub'><a href='#'><span>Excluir</span></a></li>
       </ul>
    </li>
    <li><a href='#'><span>Carteira</span></a></li>
-   <li><a href='#'><span>Corretor</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Corretor</span></a>
+        <ul>
+            <li class='has-sub'><a href='formCorretor.php'><span>Cadastrar</span></li>
+        </ul>
+    </li>
 </ul>
 </div>
 
