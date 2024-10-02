@@ -1,0 +1,43 @@
+-- Criando o banco de dados
+CREATE DATABASE larosa;
+
+-- Usando o banco de dados criado
+USE larosa;
+
+-- Tabela de corretores (usuários do sistema)
+CREATE TABLE corretor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL, -- A senha pode ser armazenada com hash
+    telefone VARCHAR(15),
+    nivel ENUM('admin', 'corretor') DEFAULT 'corretor', -- Nível do usuário (admin ou corretor)
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabela de imóveis
+CREATE TABLE imovel (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    corretor_id INT, -- Relaciona o imóvel com o corretor que cadastrou
+    tipo VARCHAR(50) NOT NULL, -- Ex: Casa, Apartamento, Terreno
+    endereco VARCHAR(255) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    estado VARCHAR(2) NOT NULL, -- Sigla do estado (Ex: SP, RJ)
+    valor DECIMAL(10, 2) NOT NULL, -- Ex: 250000.00 (para armazenar o valor do imóvel)
+    descricao TEXT,
+    imagem VARCHAR(255), -- Para armazenar o caminho da imagem do imóvel
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_corretor_id FOREIGN KEY (corretor_id) REFERENCES corretor(id)
+);
+
+-- Tabela de clientes
+CREATE TABLE cliente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    corretor_id INT, -- Relaciona o cliente ao corretor que o cadastrou
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    telefone VARCHAR(15),
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_cliente_corretor_id FOREIGN KEY (corretor_id) REFERENCES corretor(id)
+);

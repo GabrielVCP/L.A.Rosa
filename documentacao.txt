@@ -1,0 +1,56 @@
+larosa/                                   # Diretório principal do projeto
+│
+├── assets/                                 # Arquivos estáticos
+│   └── style.css                               # Estilo minimalista para as páginas
+│
+├── config/                                 # Arquivos de configuração
+│   └── config.php                              # Conexão com o banco de dados MySQL
+│
+├── public/                                 # Arquivos acessíveis pelo navegador (raiz pública)
+│   ├── index.php                               # Página de login (formulário de acesso)
+│   ├── verificar_login.php                     # Verificação das credenciais do corretor no banco de dados
+│   ├── menu.php                                # Página de menu após login bem-sucedido
+│   ├── logout.php                              # Destruição da sessão e logout
+│   ├── cadastrar_imovel.php                    # Formulário para cadastrar imóveis
+│   ├── processar_cadastro_imovel.php           # Processa o cadastro de imóveis
+│   ├── listar_imoveis.php                      # Lista todos os imóveis
+│   ├── editar_imovel.php                       # Formulário para editar um imóvel
+│   ├── processar_editar_imovel.php             # Processa a edição de um imóvel
+│   └── deletar_imovel.php                      # Processa a exclusão de um imóvel
+│
+├── tests/                                  # Arquivos de teste para verificar funcionalidades básicas do sistema
+│   └── cadastro_corretor.php                   # Teste para cadastrar o corretor na tabela de banco de dados
+│   └── database.txt                            # Script de criação do banco de dados MySQL.
+│   └── formulario_corretor.php                 # Teste para envio do formulario de cadastro do corretor
+│
+├── uploads/                                # Diretório para armazenar imagens
+│   └── imagens_imoveis/                        # Imagens dos imóveis
+│
+├── .documentacao                           # Arquivo com a documentação do sistema
+
+Explicação da estrutura:
+/public: Diretório acessível ao público, contendo os arquivos da interface.
+
+index.php: Página inicial para o acesso do usuário
+menu.php: resumo ou lista de imóveis.
+cadastro_imovel.php: Formulário para cadastrar imóveis.
+cadastro_cliente.php: Formulário para cadastrar clientes.
+listar_imoveis.php: Página para listar todos os imóveis cadastrados.
+listar_clientes.php: Página para listar todos os clientes cadastrados.
+/assets: Pastas para armazenar os estilos (CSS), imagens e scripts (JS).
+/includes: Arquivos auxiliares que podem ser incluídos em várias partes do sistema.
+
+header.php: Cabeçalho da aplicação.
+footer.php: Rodapé da aplicação.
+database.php: Script de criação do banco de dados MySQL.
+
+Imovel.php: Classe para representar os imóveis.
+Cliente.php: Classe para representar os clientes.
+
+/uploads: Diretório para armazenar imagens dos imóveis.
+
+/tests: Simples arquivo de teste para verificar funcionalidades básicas do sistema.
+
+/config: Configurações gerais do sistema, como variáveis globais e definições de conexão ao banco.
+
+.documentacao: Arquivo com a documentação do sistema.
